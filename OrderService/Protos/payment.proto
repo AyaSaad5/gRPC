@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "PaymentService";
+
+service PaymentService{
+
+	rpc DeductUserBalance(DeductUserBalanceRequest) returns(StatusResponse);
+}
+
+message DeductUserBalanceRequest{
+	string userId = 1;
+	double totalPrice = 2;
+}
+
+message StatusResponse{
+	string status = 1;
+}
